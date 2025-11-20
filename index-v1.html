@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HEROIC Monitor</title>
+    <title>HEROIC Monitor - v1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -26,29 +26,20 @@
 
 
 
-        <!-- Security Score (left column) -->
+        <!-- Security Status (left column) -->
         <div style="height: 140px; border-bottom: 1px solid #f4f4f444; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-          <div title="Security Score" style="width:56px; height:56px; border-radius:50%; background: conic-gradient(var(--HEROIC-danger) 0 78%, var(--HEROIC-gray-200) 0); display:flex; align-items:center; justify-content:center;">
-            <div style="width:48px; height:48px; border-radius:50%; background: #1d293d; display:flex; align-items:center; justify-content:center; color: var(--HEROIC-danger); font-weight:700; font-size:18px;">78</div>
+          <div style="display:flex; align-items:center; justify-content:center; color: var(--HEROIC-success); font-size: 48px; margin-bottom: -10px;">
+            <i class="fi fi-rr-shield"></i>
           </div>
-          <div class="fs-2 fw-200" style="margin-top:6px; color:#ffffffa1; text-transform:uppercase;">Security score</div>
+          <div class="fs-2 fw-400" style="color:#ffffff; font-size: 13px;">You are secure</div>
         </div>
 
         <!-- Main navigation -->
         <div class="navigation-item-container">
           <a href="#tab-1" data-page="dashboard" class="menu-item dashboard nav-toggle nav-toggle-active">
             <i class="fi fi-rr-home menu-icon u-icon"></i>Dashboard</a>
-          <a href="#tab-2" data-page="virus-scan" class="menu-item virus-scan nav-toggle">
-            <i class="fi fi-rr-search menu-icon u-icon"></i>Virus Scan</a>
-          <a href="#vpn" data-page="vpn" class="menu-item vpn nav-toggle">
-            <i class="fi fi-rr-shield menu-icon u-icon"></i>VPN</a>
           <a href="#monitoring" data-page="monitoring" class="menu-item monitoring nav-toggle">
             <i class="fi fi-rr-computer menu-icon u-icon"></i>Monitoring</a>
-          <a href="#toolbox" data-page="toolbox" class="menu-item toolbox nav-toggle">
-            <i class="fi fi-rr-tools menu-icon u-icon"></i>Toolbox</a>
-          
-          <a href="#tab-4" data-page="logs" class="menu-item logs nav-toggle">
-            <i class="fi fi-rr-time-past menu-icon u-icon"></i>Logs</a>
         </div>
 
         <!-- Bottom nav items -->
@@ -74,14 +65,14 @@
       </div>
     </div>
 
-    <script src="assets/app.js" defer></script>
+    <script src="assets/app-v1.js" defer></script>
 
     <!-- Version Toggle - Floating Developer Tool -->
     <div id="version-toggle" style="position: fixed; top: 10px; right: 10px; z-index: 10000; background: rgba(0, 0, 0, 0.85); border: 2px solid #666; border-radius: 6px; padding: 8px 12px; font-family: 'Courier New', monospace; font-size: 11px; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
       <div style="margin-bottom: 4px; color: #999; text-transform: uppercase; font-size: 9px;">Version</div>
       <div style="display: flex; gap: 6px;">
-        <a href="index.html" style="padding: 4px 10px; background: #4a90e2; border-radius: 3px; color: #fff; text-decoration: none; font-weight: 600; border: 1px solid #357abd;">Full</a>
-        <a href="index-v1.html" style="padding: 4px 10px; background: rgba(255,255,255,0.2); border-radius: 3px; color: #ccc; text-decoration: none; border: 1px solid rgba(255,255,255,0.3);">v1</a>
+        <a href="index.html" style="padding: 4px 10px; background: rgba(255,255,255,0.2); border-radius: 3px; color: #ccc; text-decoration: none; border: 1px solid rgba(255,255,255,0.3);">Full</a>
+        <a href="index-v1.html" style="padding: 4px 10px; background: #4a90e2; border-radius: 3px; color: #fff; text-decoration: none; font-weight: 600; border: 1px solid #357abd;">v1</a>
       </div>
     </div>
   </body>

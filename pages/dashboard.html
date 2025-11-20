@@ -5,13 +5,31 @@
       
 
       <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <!-- Connected Account Card: full-width across first row -->
+        <div class="heroic-card" style="grid-column: 1 / -1;">
+          <div class="heroic-card-body-content">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="heroic-info-icon heroic-info-icon--primary" style="width: 40px; height: 40px; font-size: 18px;">
+              <i class="fi fi-rr-user"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="font-size: 14px; font-weight: 600; color: var(--HEROIC-text-primary); margin-bottom: 4px;">John Doe</div>
+              <div style="font-size: 13px; color: var(--HEROIC-text-secondary);">john.doe@heroic.com</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="heroic-badge heroic-badge-success">Connected</span>
+              <a href="#account" style="color: var(--HEROIC-text-secondary); text-decoration: none; cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center;">
+                <i class="fi fi-rr-settings" style="font-size: 16px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+
         <!-- Monitoring: full-width across first row -->
         <div class="heroic-card" style="grid-column: 1 / -1;">
         <div class="heroic-card-header-sm">
           <h3 class="heroic-card-title"><i class="fi fi-rr-computer"></i> Monitoring</h3>
-          <div class="heroic-card-toolbar">
-            <span class="heroic-badge heroic-badge-success">Connected</span>
-          </div>
         </div>
         <div class="heroic-card-body-content">
           <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
