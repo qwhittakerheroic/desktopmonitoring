@@ -1,0 +1,1399 @@
+/* 
+ * HEROIC Standalone Styles
+ * ========================
+ * 
+ * PURPOSE: Abstract layer for Metronic design system
+ * Provides consistent styling with HEROIC prefix for easy identification
+ * 
+ * ORGANIZATION:
+ * 1. CORE COMPONENTS (Cards, Tables, Buttons)
+ * 2. FORM ELEMENTS (Inputs, Dropdowns, Search)
+ * 3. LAYOUT & NAVIGATION (Tabs, Menu Items)
+ * 4. STATUS & VISUAL ELEMENTS (Badges, Severity)
+ * 5. CSS VARIABLES (Design system foundation)
+ * 6. ANIMATIONS (Fade effects)
+ * 
+ * USAGE: Use HEROIC classes instead of direct Metronic classes for consistency
+ */
+
+/* Global typography */
+html, body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; }
+*, *::before, *::after { font-family: inherit; }
+
+/*PAGE STYLES*/
+.heroic-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* =========================================================
+   1. CORE COMPONENTS
+   ========================================================= */
+
+/* =============== CARDS =============== */
+/*
+ * CARD SYSTEM:
+ * - .heroic-card (main container)
+ * - .heroic-card-header (standard header)
+ * - .heroic-card-header-sm (small header)
+ * - .heroic-card-title (title styling)
+ * - .heroic-card-toolbar (action buttons area)
+ * - .heroic-card-body-content (content area)
+ * 
+ * REPLACES: .card, .card-header, .card-body, .card-title, .card-toolbar
+ */
+
+.heroic-card {
+  background-color: var(--HEROIC-bg-white);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-border-color);
+  border-radius: var(--HEROIC-border-radius-lg);
+}
+
+.heroic-card-header {
+  padding: 5px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  font-weight: var(--HEROIC-font-weight-medium);
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+}
+
+
+.heroic-card-header-sm {
+  padding: 0px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  font-weight: var(--HEROIC-font-weight-medium);
+  justify-content: space-between;
+  align-items: center;
+  min-height: 45px;
+}
+
+.heroic-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.heroic-card-title i{
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+.heroic-card-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+.heroic-card-body-content {
+  padding: 15px;
+}
+
+/*Page Title */
+.content-frame-header {
+  background-size: cover;
+  display:flex;
+  flex-wrap: wrap;
+  min-height: 100px;
+  background-color: #fff;
+  padding: 10px 10px 0px 10px;
+  border-bottom: 1px solid var(--HEROIC-border-color);
+  align-content: center;
+}
+
+.content-frame-title {
+  padding: 20px 10px;
+  width: 100%;
+}
+
+.content-frame > div h2 {
+  font-size: 16px;
+  color: black;
+  line-height: 5px;
+  font-weight: 600;
+}
+
+
+/* =============== TABLES =============== */
+/*
+ * TABLE SYSTEM:
+ * - .heroic-datatable-container (wrapper with border/scroll)
+ * - .heroic-datatable (table element)
+ * - Built-in styling for headers, cells, and pagination
+ * 
+ * REPLACES: .table-responsive, .table, .table-striped, .table-hover
+ */
+
+/* Heroic DataTable Styles */
+.heroic-datatable-container {
+    margin: var(--HEROIC-spacing-md) 0;
+    overflow-x: auto;
+}
+
+.heroic-datatable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--HEROIC-border-color);
+    border-radius: var(--HEROIC-border-radius-sm);
+    font-size: var(--HEROIC-font-size-sm);
+}
+
+.heroic-datatable thead {
+    background: var(--HEROIC-background-light);
+}
+
+.heroic-datatable th {
+    padding: var(--HEROIC-padding-sm) var(--HEROIC-padding-md);
+    text-align: left;
+    font-weight: 600;
+    color: var(--HEROIC-text-dark);
+    border-bottom: 1px solid var(--HEROIC-border-color);
+}
+
+.heroic-datatable td {
+    padding: var(--HEROIC-padding-sm) var(--HEROIC-padding-md);
+    text-align: left;
+    border-bottom: 1px solid var(--HEROIC-border-color-light);
+    color: var(--HEROIC-text-medium);
+}
+
+.heroic-datatable tbody tr:hover {
+    background: var(--HEROIC-background-hover);
+}
+
+.heroic-datatable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.heroic-datatable-container button,
+.heroic-datatable-container > a {
+  background-color: transparent;
+  color: #6c757d;
+  border: 1px solid #e1e5e9;
+  border-radius: 0.25rem;
+  font-weight: 400;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.heroic-datatable-container .form-check-input {
+  height: 15px;
+  width: 15px;
+}
+
+.heroic-datatable-container .heroic-table-btn:hover {
+  background-color: #f8f9fa;
+}
+
+/* =============== DATATABLE CHECKBOXES =============== */
+/*
+ * CHECKBOX SYSTEM:
+ * - Custom styling for checkboxes within datatables
+ * - Consistent with HEROIC design system
+ * - Proper sizing and focus states
+ */
+
+.heroic-datatable-container input[type="checkbox"].form-check-input {
+  width: 1.4em;
+  height: 1.4em;
+  min-width: 1.4em;
+  min-height: 1.4em;
+  margin: 0;
+  border: 1px solid #d1d3e0;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.heroic-datatable-container input[type="checkbox"].form-check-input:checked {
+  background-color: var(--HEROIC-primary);
+  border-color: var(--HEROIC-primary);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+  background-size: 0.95em 0.95em;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroic-datatable-container input[type="checkbox"].form-check-input:hover {
+  border-color: var(--HEROIC-primary);
+}
+
+/* Mobile datatable - prevent text stacking for all columns */
+@media (max-width: 767.98px) {
+  .heroic-datatable-container .heroic-datatable th,
+  .heroic-datatable-container .heroic-datatable td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  
+  .heroic-datatable-container .heroic-datatable td i {
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================================
+   3. LAYOUT & NAVIGATION
+   ========================================================= */
+/*
+ * TAB SYSTEM:
+ * - .heroic-tab-wrapper (tab container)
+ * - Built-in styling for nav links and active states
+ */
+
+ .nav-tabs.heroic-tab-wrapper {
+  border: none;
+  margin-bottom: 0px;
+  padding: 0 2px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  font-size: 1.075rem;
+  align-items: flex-end;
+  column-gap: 10px;
+}
+
+.nav-tabs.heroic-tab-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-tabs.heroic-tab-wrapper .nav-link {
+  border: none;
+  border-bottom: 1px solid transparent;
+  background: none !important;
+  color: #6c757d;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 14px;
+  padding: 6px 4px;
+}
+
+.nav-tabs.heroic-tab-wrapper .nav-link.active {
+  color: #212529;
+  font-weight: 600;
+  border-bottom: 2px solid #009ef7;
+}
+
+.nav-tabs.heroic-tab-wrapper .nav-link.active:hover {
+  color: #212529;
+  font-weight: 600;
+  border-bottom: 2px solid #009ef7;
+}
+
+.nav-tabs.heroic-tab-wrapper .nav-link:not(.active):hover {
+  color: #495057;
+  border-bottom: 2px solid rgba(0, 158, 247, 0.3);
+}
+
+/* Panels for Heroic tabs */
+.heroic-tab-panel { display: none; }
+.heroic-tab-panel.active { display: block; }
+
+
+/* =============== PAGINATION =============== */
+/*
+ * PAGINATION SYSTEM:
+ * - .heroic-datatable-pagination (pagination wrapper)
+ * - Built-in styling for page items, links, active states
+ * - Left-aligned page count with dropdown selector
+ */
+
+.heroic-datatable-pagination .page-item {
+  display: inline-block;
+  margin: 0 0.125rem;
+}
+
+.heroic-datatable-pagination .page-item .page-link {
+  color: #6c757d;
+  background-color: #ffffff;
+  border: 1px solid #e1e5e9;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: block;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.heroic-datatable-pagination .page-item .page-link:hover {
+  color: #495057;
+  background-color: #f8f9fa;
+  border-color: #adb5bd;
+}
+
+.heroic-datatable-pagination .page-item.active .page-link {
+  background-color: #009ef7;
+  border-color: #009ef7;
+  color: #ffffff;
+}
+
+.heroic-datatable-pagination .page-item.active .page-link:hover {
+  background-color: #0095e8;
+  border-color: #0095e8;
+  color: #ffffff;
+}
+
+.heroic-datatable-pagination .page-item.disabled .page-link {
+  color: #adb5bd;
+  background-color: #ffffff;
+  border-color: #e1e5e9;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.heroic-datatable-pagination .page-item.disabled .page-link:hover {
+  color: #adb5bd;
+  background-color: #ffffff;
+  border-color: #e1e5e9;
+}
+
+/* =============== PAGINATION LAYOUT ALIGNMENT =============== */
+/*
+ * PAGINATION LAYOUT:
+ * - Aligns page count text with dropdown selector on desktop and tablet
+ * - Maintains responsive behavior on mobile
+ */
+
+.heroic-datatable-pagination {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heroic-datatable-pagination > div:first-child {
+  /* Dropdown container - keep as is */
+  flex-shrink: 0;
+}
+
+.heroic-datatable-pagination > div:nth-child(2) {
+  /* Page count text - align with dropdown */
+  flex: 1;
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.heroic-datatable-pagination > div:last-child {
+  /* Pagination navigation - keep on right */
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767.98px) {
+  .heroic-datatable-pagination {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .heroic-datatable-pagination > div:nth-child(2) {
+    text-align: center;
+    order: 2;
+  }
+  
+  .heroic-datatable-pagination > div:last-child {
+    order: 3;
+    margin-left: 0;
+  }
+  
+  .heroic-datatable-pagination > div:first-child {
+    order: 1;
+  }
+}
+
+/* =============== BUTTONS =============== */
+/*
+ * BUTTON SYSTEM:
+ * Organized by color family with consistent sizing
+ * 
+ * COLOR FAMILIES:
+ * - White/Gray: .heroic-btn-white, .heroic-btn-gray, .heroic-btn-gray-dark
+ * - Blue: .heroic-btn-blue, .heroic-btn-blue-light
+ * - Danger: .heroic-btn-danger, .heroic-btn-danger-light, .heroic-btn-danger-outline
+ * - Warning: .heroic-btn-warning, .heroic-btn-warning-light
+ * - Utilities: .heroic-btn-outline, .heroic-btn-inactive
+ * 
+ * SIZES: .heroic-btn-xs, .heroic-btn-sm, .heroic-btn-rg, .heroic-btn-lg, .heroic-btn-xl
+ * 
+ * USAGE: <button class="heroic-btn-blue">Button Text</button>
+ */
+
+/* ----- WHITE & GRAY BUTTONS ----- */
+.heroic-btn-white {
+  background-color: var(--HEROIC-bg-white);
+  color: var(--HEROIC-text-primary);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-border-color);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-white:hover {
+  background-color: var(--HEROIC-gray-100);
+  border-color: var(--HEROIC-gray-400);
+  color: var(--HEROIC-text-primary);
+}
+
+.heroic-btn-gray {
+  background-color: var(--HEROIC-gray-100);
+  color: var(--HEROIC-text-secondary);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-border-color);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-gray:hover {
+  background-color: var(--HEROIC-gray-200);
+  border-color: var(--HEROIC-gray-400);
+  color: var(--HEROIC-text-primary);
+}
+
+.heroic-btn-gray-dark {
+  background-color: var(--HEROIC-gray-200);
+  color: var(--HEROIC-text-primary);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-gray-400);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-gray-dark:hover {
+  background-color: var(--HEROIC-gray-300);
+  border-color: var(--HEROIC-gray-500);
+  color: var(--HEROIC-text-primary);
+}
+
+/* ----- BLUE BUTTONS ----- */
+.heroic-btn-blue {
+  background-color: var(--HEROIC-primary);
+  color: var(--HEROIC-text-white);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-primary);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-sm);
+  font-weight: var(--HEROIC-font-weight-normal);
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-blue:hover {
+  background-color: var(--HEROIC-primary-hover);
+  border-color: var(--HEROIC-primary-hover);
+  color: var(--HEROIC-text-white);
+}
+
+.heroic-btn-blue-light {
+  background-color: var(--HEROIC-primary-light);
+  color: var(--HEROIC-primary);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-primary-light);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-normal);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-blue-light:hover {
+  background-color: var(--HEROIC-primary-active);
+  border-color: var(--HEROIC-primary-active);
+  color: var(--HEROIC-primary);
+}
+
+/* ----- DANGER BUTTONS ----- */
+.heroic-btn-danger {
+  background-color: var(--HEROIC-danger);
+  color: var(--HEROIC-text-white);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-danger);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-danger:hover {
+  background-color: var(--HEROIC-danger-hover);
+  border-color: var(--HEROIC-danger-hover);
+  color: var(--HEROIC-text-white);
+}
+
+.heroic-btn-danger-light {
+  background-color: var(--HEROIC-danger-light);
+  color: var(--HEROIC-danger);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-danger-light);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-danger-light:hover {
+  background-color: #ffe6ea;
+  border-color: #ffe6ea;
+  color: var(--HEROIC-danger);
+}
+
+.heroic-btn-danger-outline {
+  background-color: transparent;
+  color: var(--HEROIC-danger);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-danger);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-danger-outline:hover {
+  background-color: var(--HEROIC-danger);
+  border-color: var(--HEROIC-danger);
+  color: var(--HEROIC-text-white);
+}
+
+/* ----- WARNING BUTTONS ----- */
+.heroic-btn-warning {
+  background-color: var(--HEROIC-orange);
+  color: var(--HEROIC-text-white);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-orange);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-warning:hover {
+  background-color: #e86a0a;
+  border-color: #e86a0a;
+  color: var(--HEROIC-text-white);
+}
+
+.heroic-btn-warning-light {
+  background-color: var(--HEROIC-orange-light);
+  color: var(--HEROIC-orange);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-orange-light);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-warning-light:hover {
+  background-color: #ffe6cc;
+  border-color: #ffe6cc;
+  color: var(--HEROIC-orange);
+}
+
+/* ----- UTILITY BUTTONS ----- */
+.heroic-btn-outline {
+  background-color: transparent;
+  color: var(--HEROIC-primary);
+  border: var(--HEROIC-border-width-1) solid var(--HEROIC-primary);
+  border-radius: var(--HEROIC-border-radius-md);
+  font-size: var(--HEROIC-font-size-base);
+  font-weight: var(--HEROIC-font-weight-medium);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: var(--HEROIC-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--HEROIC-spacing-sm);
+  text-decoration: none;
+}
+
+.heroic-btn-outline:hover {
+  background-color: var(--HEROIC-primary-light);
+  border-color: var(--HEROIC-primary);
+  color: var(--HEROIC-primary);
+}
+
+.heroic-btn-inactive {
+  opacity: 0.6;
+}
+
+.heroic-btn-inactive:hover {
+  opacity: 0.6;
+}
+
+/* ----- BUTTON SIZES ----- */
+.heroic-btn-xs {
+  padding: 5px 10px;
+  font-size: var(--HEROIC-font-size-sm);
+  border-radius: var(--HEROIC-border-radius-sm);
+}
+
+.heroic-btn-sm {
+  padding: 5px 10px;
+  font-size: var(--HEROIC-font-size-base);
+  border-radius: var(--HEROIC-border-radius-sm);
+  font-weight: var(--HEROIC-font-weight-normal);
+}
+
+.heroic-btn-rg {
+  padding: 5px 10px;
+  font-size: var(--HEROIC-font-size-base);
+  border-radius: var(--HEROIC-border-radius-md);
+}
+
+
+/* =============== BADGES =============== */
+/* Compact status pills for inline semantic states */
+.heroic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-size: var(--HEROIC-font-size-xs);
+  line-height: 1;
+  font-weight: var(--HEROIC-font-weight-semibold, 600);
+  border: 1px solid transparent;
+}
+.heroic-badge-primary { color: var(--HEROIC-primary); background-color: var(--HEROIC-primary-active); border-color: var(--HEROIC-primary); }
+.heroic-badge-success { color: var(--HEROIC-success);  border-color: var(--HEROIC-success); }
+.heroic-badge-warning { color: var(--HEROIC-warning); border-color: var(--HEROIC-warning); }
+.heroic-badge-secondary { color: var(--HEROIC-secondary); background-color: var(--HEROIC-secondary-light); border-color: var(--HEROIC-secondary); }
+
+
+/* =============== INFO ITEM (icon + text) =============== */
+.heroic-info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--HEROIC-font-size-base);
+  color: var(--HEROIC-text-primary);
+  margin-bottom: 10px;
+}
+.heroic-info-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+.heroic-info-icon--primary { background: var(--HEROIC-primary-active); color: var(--HEROIC-primary); }
+.heroic-info-icon--success { background: var(--HEROIC-success-light); color: var(--HEROIC-success); }
+.heroic-info-icon--warning { background: var(--HEROIC-warning-light); color: var(--HEROIC-warning); }
+.heroic-info-icon--danger { background: var(--HEROIC-danger-light); color: var(--HEROIC-danger); }
+.heroic-info-icon--secondary { background: var(--HEROIC-secondary-light); color: var(--HEROIC-secondary); }
+
+
+/* =========================================================
+   2. FORM ELEMENTS
+   ========================================================= */
+
+/* =============== INPUTS & SEARCH =============== */
+/*
+ * FORM SYSTEM:
+ * - .heroic-input (standard text input)
+ * - .heroic-search-input (search with built-in icon)
+ * - .heroic-dropdown (select dropdown)
+ * - .heroic-label (form labels)
+ * 
+ * REPLACES: .form-control, .form-select, .form-label
+ */
+
+.heroic-input {
+  border: 1px solid #e1e5e9;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  font-weight: 400;
+  font-size: 1rem;
+  width: 100%;
+  transition: 100ms ease-in-out;
+  background-color: #ffffff;
+}
+
+.heroic-input:focus {
+  outline: none;
+  border-color: #2f7fad;
+}
+
+.heroic-search-input {
+  border: 1px solid #e1e5e9;
+  border-radius: 0.375rem;
+  padding: 0.75rem 0.95rem 0.75rem 2.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  width: 100%;
+  transition: 100ms ease-in-out;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236c757d'%3e%3cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 0.75rem center;
+  background-size: 14px 14px;
+}
+
+.heroic-search-input:focus {
+  outline: none;
+  border-color: #2f7fad;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232f7fad'%3e%3cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3e%3c/svg%3e");
+}
+
+/*default dropdown menu item styling*/
+.heroic-dropdown {
+  border: 1px solid #e1e5e9;
+  border-radius: 0.375rem;
+  font-weight: 400;
+  text-align: left;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 8px;
+  cursor: pointer;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/*variation of the main dropdown to just take care of the arrow*/
+.heroic-dropdown-button {
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 8px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.heroic-dropdown:focus {
+  outline: none;
+  border-color: #2f7fad;
+}
+
+.heroic-dropdown-menu .dropdown-toggle::after {
+  display: none;
+}
+
+.heroic-dropdown:hover {
+  border-color: #adb5bd;
+}
+
+.heroic-dropdown:disabled {
+  background-color: #e9ecef;
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.heroic-dropdown.heroic-select-type,
+.heroic-dropdown.heroic-select-severity {
+  min-width: 120px;
+}
+
+.heroic-dropdown.heroic-select-bulk-action {
+  width: 140px;
+}
+
+/* Modern Dropdown Styles */
+.heroic-dropdown-menu {
+  border: 1px solid #e1e5e9 ;
+  border-radius: 0.5rem ;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) ;
+  padding: 0.5rem 0;
+  margin-top: 0.25rem ;
+  background-color: #ffffff;
+  min-width: 180px ;
+}
+
+.heroic-dropdown-menu li > a {
+  padding: 0.625rem 1rem;
+  border-radius: 0.375rem;
+  font-size: .95rem;
+  font-weight: 400;
+  color: #495057;
+  transition: background-color 0s ease-in-out, color 0s ease-in-out;
+  margin-bottom: 0.125rem ;
+}
+
+/* Dropdown divider styling */
+.dropdown-divider {
+  margin: 0.5rem 0;
+  border-color: #e9ecef;
+}
+
+/* Hide Bootstrap dropdown arrow for heroic dropdowns since we now have our own */
+.heroic-dropdown.dropdown-toggle::after, .heroic-dropdown-button.dropdown-toggle::after {
+  display: none;
+}
+
+
+.heroic-label {
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.heroic-search-action {
+  background-color: #ffffff;
+  color: #495057;
+  border: 1px solid #e1e5e9;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 400;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.heroic-search-action:hover {
+  background-color: #f8f9fa;
+  border-color: #adb5bd;
+}
+
+/* =============== CHECKBOXES =============== */
+/*
+ * Simple checkbox sizing override for Metronic form-check-input
+ * Just handles sizing - keeps all other Metronic styling intact
+ */
+
+/* Override default Metronic checkbox size */
+.form-check-input {
+  width: 1.4em;
+  height: 1.4em;
+  min-width: 1.4em;
+  min-height: 1.4em;
+  margin: 0;
+  border: 1px solid #d1d3e0;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+
+
+/* =========================================================
+   5. CUSTOM COLORS
+   ========================================================= */
+
+/* =========================================================*/
+.custom-heroic-orange {
+  color: #e9a54c;
+}
+
+.custom-heroic-orange-bg {
+  background-color: #e9a54c;
+}
+
+ 
+
+/* =========================================================
+   6. CSS VARIABLES (Design System Foundation)
+   ========================================================= */
+
+:root {
+  /* =============== COLORS =============== */
+  --HEROIC-primary: #006199;
+  --HEROIC-primary-light: #f1faff;
+  --HEROIC-primary-hover: #006199;
+  --HEROIC-primary-active: #e1f5fe;
+  --HEROIC-secondary: #6c757d;
+  --HEROIC-secondary-light: #f8f9fa;
+  --HEROIC-success: #50cd89;
+  --HEROIC-success-light: #e8fff3;
+  --HEROIC-warning: #ffc700;
+  --HEROIC-warning-light: #fff8dc;
+  --HEROIC-danger: #dc3545;
+  --HEROIC-danger-light: #fff5f8;
+  --HEROIC-danger-hover: #c82333;
+  --HEROIC-info: #7239ea;
+  --HEROIC-info-light: #f3e8ff;
+  --HEROIC-orange: #fd7e14;
+  --HEROIC-orange-light: #fff3e0;
+  --HEROIC-white: #ffffff;
+  --HEROIC-black: #000000;
+  --HEROIC-gray-100: #f8f9fa;
+  --HEROIC-gray-200: #e9ecef;
+  --HEROIC-gray-300: #e1e5e9;
+  --HEROIC-gray-400: #adb5bd;
+  --HEROIC-gray-500: #6c757d;
+  --HEROIC-gray-600: #495057;
+  --HEROIC-gray-700: #343a40;
+  --HEROIC-gray-800: #212529;
+  --HEROIC-gray-900: #1a1d1f;
+  --HEROIC-text-primary: #212529;
+  --HEROIC-text-secondary: #6c757d;
+  --HEROIC-text-muted: #6c757d;
+  --HEROIC-text-white: #ffffff;
+  --HEROIC-border-color: #e1e5e9;
+  --HEROIC-border-light: #f8f9fa;
+  --HEROIC-bg-white: #ffffff;
+  --HEROIC-bg-light: #f8f9fa;
+  --HEROIC-bg-dark: #212529;
+  
+  /* =============== FONT SIZES =============== */
+  --HEROIC-font-size-xs: 11px;
+  --HEROIC-font-size-sm: 12px;
+  --HEROIC-font-size-base: 13px;
+  --HEROIC-font-size-lg: 14px;
+  
+  /* =============== FONT WEIGHTS =============== */
+  --HEROIC-font-weight-light: 300;
+  --HEROIC-font-weight-normal: 400;
+  --HEROIC-font-weight-medium: 500;
+  --HEROIC-font-weight-semibold: 600;
+  --HEROIC-font-weight-bold: 700;
+  --HEROIC-font-weight-extrabold: 800;
+  
+  /* =============== SPACING =============== */
+  --HEROIC-spacing-xs: 4px;
+  --HEROIC-spacing-sm: 8px;
+  --HEROIC-spacing-md: 12px;
+  --HEROIC-spacing-lg: 16px;
+  --HEROIC-spacing-xl: 24px;
+  --HEROIC-spacing-2xl: 32px;
+  --HEROIC-spacing-3xl: 48px;
+  --HEROIC-spacing-4xl: 64px;
+  --HEROIC-padding-xs: 4px;
+  --HEROIC-padding-sm: 8px;
+  --HEROIC-padding-md: 12px;
+  --HEROIC-padding-lg: 16px;
+  --HEROIC-padding-xl: 24px;
+  --HEROIC-padding-2xl: 32px;
+  --HEROIC-padding-3xl: 48px;
+  --HEROIC-margin-xs: 4px;
+  --HEROIC-margin-sm: 8px;
+  --HEROIC-margin-md: 12px;
+  --HEROIC-margin-lg: 16px;
+  --HEROIC-margin-xl: 24px;
+  --HEROIC-margin-2xl: 32px;
+  --HEROIC-margin-3xl: 48px;
+  
+  /* =============== BORDERS =============== */
+  --HEROIC-border-width-0: 0;
+  --HEROIC-border-width-1: 1px;
+  --HEROIC-border-width-2: 2px;
+  --HEROIC-border-width-4: 4px;
+  --HEROIC-border-width-8: 8px;
+  --HEROIC-border-radius-none: 0;
+  --HEROIC-border-radius-sm: 4px;
+  --HEROIC-border-radius-md: 5px;
+  --HEROIC-border-radius-lg: 8px;
+
+  
+  /* =============== SIZES =============== */
+  --HEROIC-height-xs: 20px;
+  --HEROIC-height-sm: 24px;
+  --HEROIC-height-md: 32px;
+  --HEROIC-height-lg: 40px;
+  --HEROIC-height-xl: 48px;
+  --HEROIC-height-2xl: 60px;
+  --HEROIC-width-xs: 20px;
+  --HEROIC-width-sm: 24px;
+  --HEROIC-width-md: 32px;
+  --HEROIC-width-lg: 40px;
+  --HEROIC-width-xl: 48px;
+  --HEROIC-width-2xl: 60px;
+  
+  /* =============== SHADOWS =============== */
+  --HEROIC-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.075);
+  --HEROIC-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --HEROIC-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --HEROIC-shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.2);
+  
+  /* =============== TRANSITIONS =============== */
+  --HEROIC-transition-fast: 0.15s ease-in-out;
+  --HEROIC-transition-normal: 0.2s ease-in-out;
+  --HEROIC-transition-slow: 0.3s ease-in-out;
+  
+  /* =============== Z-INDEX =============== */
+  --HEROIC-z-index-dropdown: 1000;
+  --HEROIC-z-index-sticky: 1020;
+  --HEROIC-z-index-fixed: 1030;
+  --HEROIC-z-index-modal-backdrop: 1040;
+  --HEROIC-z-index-modal: 1050;
+  --HEROIC-z-index-popover: 1060;
+  --HEROIC-z-index-tooltip: 1070;
+  
+  /* =============== BREAKPOINTS =============== */
+  --HEROIC-breakpoint-xs: 0;
+  --HEROIC-breakpoint-sm: 576px;
+  --HEROIC-breakpoint-md: 768px;
+  --HEROIC-breakpoint-lg: 992px;
+  --HEROIC-breakpoint-xl: 1200px;
+  --HEROIC-breakpoint-xxl: 1400px;
+}
+
+/* =========================================================
+   7. ANIMATIONS
+   ========================================================= */
+
+/*
+ * ANIMATION SYSTEM:
+ * - .heroic-animate-fade-in (fade in)
+ * - .heroic-animate-fade-out (fade out)
+ * - .heroic-animate-fade-in-up (fade in from bottom)
+ * - .heroic-animate-fade-in-down (fade in from top)
+ * - .heroic-animate-fade-in-left (fade in from left)
+ * - .heroic-animate-fade-in-right (fade in from right)
+ */
+
+.heroic-hover-shadow:hover {
+  box-shadow: 0 4px 16px 0 rgba(30, 34, 90, 0.07), 0 1.5px 4px 0 rgba(30, 34, 90, 0.04);
+  transition: box-shadow 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+.heroic-hover-shadow {
+  transition: box-shadow 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+/* Subtle page fade-in animation for page content */
+.heroic-page-animate {
+  animation: heroic-fadein 0.5s ease;
+}
+
+@keyframes heroic-fadein {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.heroic-animate-fade-in {
+  animation: heroic-fade-in 0.5s ease-in-out ;
+}
+
+.heroic-animate-fade-out {
+  animation: heroic-fade-out 0.5s ease-in-out ;
+}
+
+.heroic-animate-fade-in-up {
+  animation: heroic-fade-in-up 0.2s ease-out ;
+}
+
+.heroic-animate-fade-in-down {
+  animation: heroic-fade-in-down 0.3s ease-out ;
+}
+
+.heroic-animate-fade-in-left {
+  animation: heroic-fade-in-left 0.2s ease-out ;
+}
+
+.heroic-animate-fade-in-right {
+  animation: heroic-fade-in-right 0.3s ease-out ;
+}
+
+@keyframes heroic-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroic-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes heroic-fade-in-up {
+  from {
+    opacity: 0.8;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroic-fade-in-down {
+  from {
+    opacity: 0.5;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroic-fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroic-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================================
+   8. UTILITY CLASSES (simple, token-aligned)
+   ========================================================= */
+
+/* Font sizes (mapped to HEROIC font scale) */
+.fs-1 { font-size: var(--HEROIC-font-size-xs); }
+.fs-2 { font-size: var(--HEROIC-font-size-sm); }
+.fs-3 { font-size: var(--HEROIC-font-size-base); }
+.fs-4 { font-size: var(--HEROIC-font-size-lg); }
+
+/* Font weights */
+.fw-400 { font-weight: var(--HEROIC-font-weight-normal); }
+.fw-500 { font-weight: var(--HEROIC-font-weight-medium); }
+.fw-600 { font-weight: var(--HEROIC-font-weight-semibold); }
+.fw-700 { font-weight: var(--HEROIC-font-weight-bold); }
+
+/* Spacing scale helpers: 0..7 → 0, xs, sm, md, lg, xl, 2xl, 3xl */
+.m-0 { margin: 0; }
+.m-1 { margin: var(--HEROIC-spacing-xs); }
+.m-2 { margin: var(--HEROIC-spacing-sm); }
+.m-3 { margin: var(--HEROIC-spacing-md); }
+.m-4 { margin: var(--HEROIC-spacing-lg); }
+.m-5 { margin: var(--HEROIC-spacing-xl); }
+.m-6 { margin: var(--HEROIC-spacing-2xl); }
+.m-7 { margin: var(--HEROIC-spacing-3xl); }
+
+.mx-0 { margin-left: 0; margin-right: 0; }
+.mx-1 { margin-left: var(--HEROIC-spacing-xs); margin-right: var(--HEROIC-spacing-xs); }
+.mx-2 { margin-left: var(--HEROIC-spacing-sm); margin-right: var(--HEROIC-spacing-sm); }
+.mx-3 { margin-left: var(--HEROIC-spacing-md); margin-right: var(--HEROIC-spacing-md); }
+.mx-4 { margin-left: var(--HEROIC-spacing-lg); margin-right: var(--HEROIC-spacing-lg); }
+.mx-5 { margin-left: var(--HEROIC-spacing-xl); margin-right: var(--HEROIC-spacing-xl); }
+.mx-6 { margin-left: var(--HEROIC-spacing-2xl); margin-right: var(--HEROIC-spacing-2xl); }
+.mx-7 { margin-left: var(--HEROIC-spacing-3xl); margin-right: var(--HEROIC-spacing-3xl); }
+
+.my-0 { margin-top: 0; margin-bottom: 0; }
+.my-1 { margin-top: var(--HEROIC-spacing-xs); margin-bottom: var(--HEROIC-spacing-xs); }
+.my-2 { margin-top: var(--HEROIC-spacing-sm); margin-bottom: var(--HEROIC-spacing-sm); }
+.my-3 { margin-top: var(--HEROIC-spacing-md); margin-bottom: var(--HEROIC-spacing-md); }
+.my-4 { margin-top: var(--HEROIC-spacing-lg); margin-bottom: var(--HEROIC-spacing-lg); }
+.my-5 { margin-top: var(--HEROIC-spacing-xl); margin-bottom: var(--HEROIC-spacing-xl); }
+.my-6 { margin-top: var(--HEROIC-spacing-2xl); margin-bottom: var(--HEROIC-spacing-2xl); }
+.my-7 { margin-top: var(--HEROIC-spacing-3xl); margin-bottom: var(--HEROIC-spacing-3xl); }
+
+.mt-1 { margin-top: var(--HEROIC-spacing-xs); }
+.mt-2 { margin-top: var(--HEROIC-spacing-sm); }
+.mt-3 { margin-top: var(--HEROIC-spacing-md); }
+.mt-4 { margin-top: var(--HEROIC-spacing-lg); }
+.mt-5 { margin-top: var(--HEROIC-spacing-xl); }
+.mt-6 { margin-top: var(--HEROIC-spacing-2xl); }
+.mt-7 { margin-top: var(--HEROIC-spacing-3xl); }
+
+.mb-1 { margin-bottom: var(--HEROIC-spacing-xs); }
+.mb-2 { margin-bottom: var(--HEROIC-spacing-sm); }
+.mb-3 { margin-bottom: var(--HEROIC-spacing-md); }
+.mb-4 { margin-bottom: var(--HEROIC-spacing-lg); }
+.mb-5 { margin-bottom: var(--HEROIC-spacing-xl); }
+.mb-6 { margin-bottom: var(--HEROIC-spacing-2xl); }
+.mb-7 { margin-bottom: var(--HEROIC-spacing-3xl); }
+
+.ml-1 { margin-left: var(--HEROIC-spacing-xs); }
+.ml-2 { margin-left: var(--HEROIC-spacing-sm); }
+.ml-3 { margin-left: var(--HEROIC-spacing-md); }
+.ml-4 { margin-left: var(--HEROIC-spacing-lg); }
+.ml-5 { margin-left: var(--HEROIC-spacing-xl); }
+.ml-6 { margin-left: var(--HEROIC-spacing-2xl); }
+.ml-7 { margin-left: var(--HEROIC-spacing-3xl); }
+
+.mr-1 { margin-right: var(--HEROIC-spacing-xs); }
+.mr-2 { margin-right: var(--HEROIC-spacing-sm); }
+.mr-3 { margin-right: var(--HEROIC-spacing-md); }
+.mr-4 { margin-right: var(--HEROIC-spacing-lg); }
+.mr-5 { margin-right: var(--HEROIC-spacing-xl); }
+.mr-6 { margin-right: var(--HEROIC-spacing-2xl); }
+.mr-7 { margin-right: var(--HEROIC-spacing-3xl); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--HEROIC-spacing-xs); }
+.p-2 { padding: var(--HEROIC-spacing-sm); }
+.p-3 { padding: var(--HEROIC-spacing-md); }
+.p-4 { padding: var(--HEROIC-spacing-lg); }
+.p-5 { padding: var(--HEROIC-spacing-xl); }
+.p-6 { padding: var(--HEROIC-spacing-2xl); }
+.p-7 { padding: var(--HEROIC-spacing-3xl); }
+
+.px-1 { padding-left: var(--HEROIC-spacing-xs); padding-right: var(--HEROIC-spacing-xs); }
+.px-2 { padding-left: var(--HEROIC-spacing-sm); padding-right: var(--HEROIC-spacing-sm); }
+.px-3 { padding-left: var(--HEROIC-spacing-md); padding-right: var(--HEROIC-spacing-md); }
+.px-4 { padding-left: var(--HEROIC-spacing-lg); padding-right: var(--HEROIC-spacing-lg); }
+.px-5 { padding-left: var(--HEROIC-spacing-xl); padding-right: var(--HEROIC-spacing-xl); }
+.px-6 { padding-left: var(--HEROIC-spacing-2xl); padding-right: var(--HEROIC-spacing-2xl); }
+
+.py-1 { padding-top: var(--HEROIC-spacing-xs); padding-bottom: var(--HEROIC-spacing-xs); }
+.py-2 { padding-top: var(--HEROIC-spacing-sm); padding-bottom: var(--HEROIC-spacing-sm); }
+.py-3 { padding-top: var(--HEROIC-spacing-md); padding-bottom: var(--HEROIC-spacing-md); }
+.py-4 { padding-top: var(--HEROIC-spacing-lg); padding-bottom: var(--HEROIC-spacing-lg); }
+.py-5 { padding-top: var(--HEROIC-spacing-xl); padding-bottom: var(--HEROIC-spacing-xl); }
+.py-6 { padding-top: var(--HEROIC-spacing-2xl); padding-bottom: var(--HEROIC-spacing-2xl); }
+
+/* Gaps for flex/grid */
+.gap-1 { gap: var(--HEROIC-spacing-xs); }
+.gap-2 { gap: var(--HEROIC-spacing-sm); }
+.gap-3 { gap: var(--HEROIC-spacing-md); }
+.gap-4 { gap: var(--HEROIC-spacing-lg); }
+.gap-5 { gap: var(--HEROIC-spacing-xl); }
+.gap-6 { gap: var(--HEROIC-spacing-2xl); }
+
+/* Border radius */
+.rounded-sm { border-radius: var(--HEROIC-border-radius-sm); }
+.rounded-md { border-radius: var(--HEROIC-border-radius-md); }
+.rounded-lg { border-radius: var(--HEROIC-border-radius-lg); }
+
+/* Width/height helpers */
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+/* =========================================================
+   9. TYPOGRAPHY - ELEMENT DEFAULTS
+   ========================================================= */
+/* Headings */
+h1 {
+  font-size: calc(var(--HEROIC-font-size-md) * 1.8);
+  line-height: 1.25;
+  font-weight: var(--HEROIC-font-weight-extrabold);
+  color: var(--HEROIC-text-primary);
+}
+h2 {
+  line-height: 1.25;
+  font-weight: var(--HEROIC-font-weight-bold);
+  color: var(--HEROIC-text-primary);
+
+}
+h3 {
+  font-size: calc(var(--HEROIC-font-size-rg) * 1.4);
+  line-height: 1.3;
+  font-weight: var(--HEROIC-font-weight-semibold);
+  color: var(--HEROIC-text-primary);
+  margin-bottom: 5px;
+
+}
+h4 {
+  font-size: calc(var(--HEROIC-font-size-sm) * 1.2);
+  line-height: 1.3;
+  font-weight: var(--HEROIC-font-weight-medium);
+  color: var(--HEROIC-text-primary);
+
+}
+h5 {
+  font-size: var(--HEROIC-font-size-sm);
+  line-height: 1.3;
+  font-weight: var(--HEROIC-font-weight-medium);
+  color: var(--HEROIC-text-primary);
+
+}
+h6 {
+  font-size: var(--HEROIC-font-size-base);
+  line-height: 1.3;
+  font-weight: var(--HEROIC-font-weight-medium);
+  color: var(--HEROIC-text-secondary);
+
+}
+
+/* Paragraphs */
+p {
+  font-size: var(--HEROIC-font-size-base);
+  line-height: 1.6;
+  color: var(--HEROIC-text-secondary);
+  margin: 0 0 var(--HEROIC-spacing-sm);
+}
+

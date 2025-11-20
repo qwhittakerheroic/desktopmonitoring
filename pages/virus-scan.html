@@ -1,0 +1,176 @@
+<div id="tab-2" class="content-frame-wrapper active">
+  <div class="content-frame content-frame-security">
+    <div class="content-frame-header">
+      <div class="content-frame-title">
+        <h2>Check your device for threats</h2>
+        <p>Last Checked: 8/27/2024</p>
+      </div>
+        <!-- Virus Scan Tabs (Heroic tab system) -->
+      <div class="nav-tabs heroic-tab-wrapper">
+        <a class="nav-link active" data-tab="threat-scanner">Threat Scanner</a>
+        <a class="nav-link" data-tab="quarantine">Quarantine</a>
+        <a class="nav-link" data-tab="trust-list">Trust List</a>
+        <a class="nav-link" data-tab="settings">Settings</a>
+      </div>
+    </div>
+
+    <div class="heroic-page-container">
+      
+    
+
+    
+    <!-- Tab Content -->
+    <div>
+      <!-- Threat Scanner Tab -->
+      <div id="threat-scanner" class="heroic-tab-panel active">
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+          <div class="heroic-card">
+            <div class="heroic-card-body-content" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+              <span style="color: var(--HEROIC-primary); background: var(--HEROIC-primary-active); border: 1px solid var(--HEROIC-primary); width:40px; height:40px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;">
+                <i class="fi fi-rr-search"></i>
+              </span>
+              <h3>Quick Scan</h3>
+              <p>Scan the most vulnerable parts of your device</p>
+              <button class="heroic-btn-gray">Start Quick Scan</button>
+            </div>
+          </div>
+          <div class="heroic-card">
+            <div class="heroic-card-body-content" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+              <span style="color: var(--HEROIC-primary); background: var(--HEROIC-primary-active); border: 1px solid var(--HEROIC-primary); width:40px; height:40px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;">
+                <i class="fi fi-rr-shield"></i>
+              </span>
+              <h3>Full Scan</h3>
+              <p>Comprehensive scan of your entire system</p>
+              <button class="heroic-btn-gray">Start Full Scan</button>
+            </div>
+          </div>
+          <div class="heroic-card">
+            <div class="heroic-card-body-content" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+              <span style="color: var(--HEROIC-primary); background: var(--HEROIC-primary-active); border: 1px solid var(--HEROIC-primary); width:40px; height:40px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;">
+                <i class="fi fi-rr-settings"></i>
+              </span>
+              <h3>Custom Scan</h3>
+              <p>Choose specific files and folders to scan</p>
+              <button class="heroic-btn-gray">Start Custom Scan</button>
+    </div>
+    </div>
+        </div>
+      </div>
+      
+      <!-- Quarantine Tab -->
+      <div id="quarantine" class="heroic-tab-panel">
+        <div class="heroic-card">
+          <div class="heroic-card-body-content">
+            <h3>Quarantined Items</h3>
+            <div class="heroic-datatable-container">
+            <table class="heroic-datatable">
+              <thead>
+                <tr>
+                  <th>Threat</th>
+                  <th>Location</th>
+                  <th style="width:180px;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fi fi-rr-bug"></i> Trojan.Generic</td>
+                  <td>file.exe</td>
+                  <td>
+                    <div style="display:flex; gap:8px;">
+                      <button class="heroic-btn-gray">Restore</button>
+                      <button class="heroic-btn-danger">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="fi fi-rr-bug"></i> Adware.Agent</td>
+                  <td>toolbar.dll</td>
+                  <td>
+                    <div style="display:flex; gap:8px;">
+                      <button class="heroic-btn-gray">Restore</button>
+                      <button class="heroic-btn-danger">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            <p style="margin-top:8px; color:#666; font-size:12px;">Restoring will whitelist the file unless removed from the trust list.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Trust List Tab -->
+      <div id="trust-list" class="heroic-tab-panel">
+        <div class="heroic-card">
+          <div class="heroic-card-body-content">
+            <h3>Trusted Applications</h3>
+            <div class="heroic-datatable-container">
+            <table class="heroic-datatable">
+              <thead>
+                <tr>
+                  <th>Application</th>
+                  <th style="width:120px;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fi fi-rr-shield-check"></i> company-updater.exe</td>
+                  <td><button class="heroic-btn-gray">Remove</button></td>
+                </tr>
+                <tr>
+                  <td><i class="fi fi-rr-shield-check"></i> internal-tool.exe</td>
+                  <td><button class="heroic-btn-gray">Remove</button></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            <div style="margin-top:12px; display:flex; gap:8px;">
+              <button class="heroic-btn-blue-light">Add File</button>
+              <button class="heroic-btn-blue-light">Add Folder</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Settings Tab -->
+      <div id="settings" class="heroic-tab-panel">
+        <div class="heroic-card">
+          <div class="heroic-card-body-content">
+            <h3>Scan Settings</h3>
+            <div class="heroic-datatable-container">
+            <table class="heroic-datatable">
+              <thead>
+                <tr>
+                  <th>Setting</th>
+                  <th style="width:120px;">Enabled</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fi fi-rr-clock-three"></i> Schedule Daily Quick Scan</td>
+                  <td><input type="checkbox" class="form-check-input" checked></td>
+                </tr>
+                <tr>
+                  <td><i class="fi fi-rr-folder"></i> Scan Archives (.zip/.rar)</td>
+                  <td><input type="checkbox" class="form-check-input" checked></td>
+                </tr>
+                <tr>
+                  <td><i class="fi fi-rr-rocket-lunch"></i> Real-time Protection</td>
+                  <td><input type="checkbox" class="form-check-input" checked></td>
+                </tr>
+                <tr>
+                  <td><i class="fi fi-rr-bell"></i> Notify on Threat Detection</td>
+                  <td><input type="checkbox" class="form-check-input" checked></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
